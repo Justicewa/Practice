@@ -11,7 +11,7 @@ int main(){
 		mid = left + (right - left) / 2;
 		if (a[mid] > to_find) {
 			right = mid - 1;
-		}
+		}  
 		else if (a[mid] < to_find) {
 			left = mid + 1;
 		}
