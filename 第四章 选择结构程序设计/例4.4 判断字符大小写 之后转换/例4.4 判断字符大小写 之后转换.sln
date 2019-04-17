@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "例4.4 判断字符大小写 之后转换", "例4.4 判断字符大小写 之后转换\例4.4 判断字符大小写 之后转换.vcxproj", "{BA516FD3-D178-4B17-AA5E-4EE952C1BB20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA516FD3-D178-4B17-AA5E-4EE952C1BB20}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BA516FD3-D178-4B17-AA5E-4EE952C1BB20}.Debug|Win32.Build.0 = Debug|Win32
+		{BA516FD3-D178-4B17-AA5E-4EE952C1BB20}.Release|Win32.ActiveCfg = Release|Win32
+		{BA516FD3-D178-4B17-AA5E-4EE952C1BB20}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
