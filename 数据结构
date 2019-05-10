@@ -1,0 +1,135 @@
+链表的面试题:
+	9.输入两个链表,找出第一个公共节点"Y""V""I"
+		1.确认链表是否相交
+			找到两个链表中最后一个节点
+			检测最后一个节点是否相同
+			typedef struct ListNode ListNode;
+			struct ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+				if(headA == NULL || headB){
+					return NULL;
+				}
+				//1.确定是否相交
+				ListNode* pTailA = headA;
+				ListNode* pTailB = headB;
+				
+				int sizeA = 1;
+				int sizeB = 1;
+				//找headA 链表中最后一个节点
+				while(pTailA -> next){
+					sizeA++;
+					pTailA = pTailA -> next;
+				}
+				
+				//headB 链表中最后一个节点
+				while(pTailB -> next){
+					sizeB++;
+					pTailB = pTailB -> next;
+				}
+				if(pTailA != pTailB){
+					return NULL; 
+				}
+				int gap = sizeA - sizeB;
+				ListNode* pCurA = headA;
+				ListNode* pCurB = headB;
+				
+				if(gap > 0){
+					while(gap--)
+						pCurA = pCurA -> next;
+				}
+				else {
+					while(gap++){
+						pCurB = pCurB -> next;
+					}
+				}
+				while(pCurA != pCurB){
+					两者指向下一个;
+				}
+				return pCurA;
+    }
+};
+	
+	10.判断链表是否有环
+		typedef struct ListNode  Node;
+		bool hasCycle(ListNode *head) {
+			Node* pFast = head; 
+			Node* pSlow = head;
+			while (pFast && pFast->next){
+				
+				pFast = pFast -> next ->next;
+				pSlow = pSlow -> next;
+				if(pFast == pSlow){
+					return true;
+				}
+			}
+			return fause;
+	}
+	
+	11.返回链表开始入环的第一个节点。 如果链表无环，则返回 NULL (结论: 相遇点和头同时指针走,相遇点就是人口点)
+		typedef struct ListNode Node;
+		ListNode* detectCycle(ListNode *head) {
+			Node* pSlow = head;
+			Node* pFast = head;
+			while(pFast && pFast -> next){
+				pFast = pFast -> next -> next;
+				pSlow = pSlow -> next;
+				if(pFast == pSlow){
+					break;
+				}
+			}
+			
+			if(pFast == NULL && pFast -> next == NULL){
+				return NULL;
+			}
+			Node* pH = head;
+			Node* pM = pFast;
+			while(pH != pM){
+				pH = pH->next;
+				pM = pM->next;
+			}
+			return pH;
+    }
+	
+	12.复杂链表的复制  1->2->3->4->NULL
+		struct Node{
+			Node* next;
+			Node* random;
+			int val;
+		};
+		
+		1.在原链表中每个节点后插入值相同的新节点
+		2.给新插节点的随机指针域赋值
+			Node* BuyNode(int data){
+				Node* pNewNode = (int*)malloc(sizeof(Node));
+				
+			}
+			if(head == NULL){
+				return NULL;
+			}
+			
+			//在原链表中每个节点后插入值相同的新节点
+			Node* pCur = head;
+			Node* pNewNode = null;
+			while(pCur){
+				
+			}
+	
+	
+
+添加:删除链表的倒数第K个节点:
+	1.找到这个节点
+		pFast ---> k步
+			while(pFast){
+				pFast = pFast->next;
+				pPreSlow = pSlow;
+				pSlow = pSlow->next;
+			}
+		
+	2.删除
+		if(pHead == pPreSlow){
+			pHead = pPreSlow -> next;
+			free(pSlow);
+		}else {
+			pPreSlow -> next = pSlow ->next;
+			free(pSlow);
+		}
+		pPreSlow->next = pPreSlow -> next;
